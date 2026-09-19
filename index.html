@@ -1,1 +1,79 @@
-{"detail":"File stream access denied."}
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Для тебя 💗</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#fff5f7;color:#4b3439;font-family:Arial,sans-serif;text-align:center}
+.page{display:none;min-height:100vh;padding:80px 25px;align-items:center;justify-content:center;flex-direction:column}
+.active{display:flex}
+h1{font-family:Georgia,serif;font-size:48px;margin:20px 0}
+h2{font-family:Georgia,serif;font-size:34px;line-height:1.2;margin:20px 0}
+p{font-size:18px;line-height:1.5;color:#80666d;max-width:400px}
+.heart{font-size:80px;color:#d86b82}
+.envelope{width:230px;height:150px;background:#f3bdc9;border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:45px}
+button{background:#d86b82;color:white;border:0;border-radius:40px;padding:17px 28px;font-size:17px;margin-top:25px}
+.drawer{width:300px;height:180px;background:#d9b094;border-radius:10px;margin:20px}
+.inside{display:none;background:#f2bdc8;width:130px;height:70px;border-radius:10px;margin:auto;padding-top:20px;font-size:25px}
+.show{display:block}
+</style>
+</head>
+  
+<body>
+
+<section class="page active" id="p1">
+<div style="color:#d86b82">МАЛЕНЬКИЙ СЮРПРИЗ</div>
+<div class="envelope">♥</div>
+<h1>Для тебя 💗</h1>
+<p>Я оставил для тебя кое-что маленькое и очень приятное.</p>
+<button onclick="go(2)">Открыть открытку →</button>
+</section>
+
+<section class="page" id="p2">
+<div style="color:#d86b82">ЕЩЁ ОДИН ШАГ</div>
+<h2>А теперь открой<br>свой рабочий ящик ♡</h2>
+<p>Не спеши. Просто открой его и посмотри внимательно.</p>
+<button onclick="go(3)">Открыть ящик →</button>
+</section>
+
+<section class="page" id="p3">
+<div style="color:#d86b82">МАЛЕНЬКАЯ ПОДСКАЗКА</div>
+<div class="drawer">
+<div id="gift" class="inside">♥</div>
+</div>
+<h2>Теперь загляни внутрь ♡</h2>
+<p>Открой ящик по-настоящему — сюрприз уже там.</p>
+<button onclick="reveal()">Я открыл ящик →</button>
+</section>
+
+<section class="page" id="p4">
+<div class="heart">♥</div>
+<div style="color:#d86b82">ТЫ НАШЛА ЕГО</div>
+<h2>Надеюсь, тебе будет вкусно ♡</h2>
+<p>Просто хотел немного порадовать тебя и сделать твой день чуточку теплее.</p>
+<button onclick="go(5)">Ещё кое-что →</button>
+</section>
+
+<section class="page" id="p5">
+<div class="heart">♡</div>
+<h2>Улыбнись</h2>
+<p>Ты заслуживаешь маленьких приятностей не только по особым поводам.</p>
+<p>Хорошего тебе дня 💗</p>
+</section>
+
+<script>
+function go(n){
+document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+document.getElementById('p'+n).classList.add('active');
+}
+function reveal(){
+document.getElementById('gift').classList.add('show');
+setTimeout(function(){go(4)},1000);
+}
+</script>
+
+</body>
+</html>
+
